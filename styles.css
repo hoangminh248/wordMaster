@@ -1,0 +1,85 @@
+:root{
+    --letter-side:30px;
+    --text-size:25px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100vh;
+    overflow: hidden;
+}
+header{
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.spinner-1 {
+    visibility: hidden;
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid;
+    border-color: #000 #0000;
+    animation: s1 1s infinite;
+}
+@keyframes s1 {to{transform: rotate(.5turn)}}
+.show{
+    visibility: visible;
+}
+.loader{
+    width: fit-content;
+    border: 0;
+    margin: 20px auto;
+}
+.container{
+    border: 1px black solid;
+    margin: 10px auto;
+    width: calc(var(--letter-side)*10);
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 20px;
+    justify-content: center;
+    align-items: center;
+}
+.container > div{
+    height: var(--letter-side);
+    width:  var(--letter-side);
+    border: 1px #ccc solid;
+    display: flex;
+    background-color: azure;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--text-size);
+}
+.wrong{
+    color: white !important;
+    background-color: rgb(160, 160, 160) !important;
+}
+.close{
+    color: white !important;
+    background-color: #F27405 !important;
+}
+.right{
+    color: white !important;
+    background-color: #03A678 !important;
+}
+.invalid {
+    animation: flash 1s;
+  }
+  
+  /* flashes red border and then fades back to gray */
+  @keyframes flash {
+    5% {
+      border-color: crimson;
+    }
+  
+    100% {
+      border-color: #ccc;
+    }
+  }
